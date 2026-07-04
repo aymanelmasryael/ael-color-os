@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AEL Color OS | Palette Generator</title>
+<meta name="description" content="Semantic color system generator — text-to-palette, design tokens, WCAG analysis.">
+<meta name="author" content="Ayman Elmasry | AEL Digital Studio">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ael_color_os.css">
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 226.77 226.77">
+      <path d="m97.19,48.59v16.2h-32.4v-16.2c0-8.94-7.25-16.2-16.2-16.2s-16.2,7.25-16.2,16.2v16.2H0v-16.2c0-5.68.98-11.13,2.76-16.2C9.44,13.52,27.44,0,48.59,0s39.16,13.52,45.83,32.4c1.79,5.07,2.76,10.52,2.76,16.2Z" fill="#fff"/>
+      <rect y="97.19" width="32.4" height="32.4" fill="#0074FF"/><rect x="64.79" y="97.19" width="32.4" height="32.4" fill="#0074FF"/>
+      <rect x="64.79" y="129.58" width="32.4" height="32.4" fill="#0074FF"/><rect y="129.58" width="32.4" height="32.4" fill="#0074FF"/>
+      <rect x="129.58" y="97.19" width="32.4" height="32.4" fill="#0074FF"/><rect x="161.98" y="129.58" width="32.4" height="32.4" fill="#0074FF"/>
+      <rect x="194.38" y="129.58" width="32.4" height="32.4" fill="#0074FF"/><rect x="129.58" y="129.58" width="32.4" height="32.4" fill="#0074FF"/>
+      <rect x="129.58" width="32.4" height="32.4" fill="#0074FF"/><rect x="161.98" width="32.4" height="32.4" fill="#0074FF"/>
+      <rect x="194.38" width="32.4" height="32.4" fill="#0074FF"/><rect x="129.58" y="32.4" width="32.4" height="32.4" fill="#0074FF"/>
+      <rect y="194.38" width="32.4" height="32.4" fill="#0074FF"/><rect x="32.4" y="194.38" width="32.4" height="32.4" fill="#0074FF"/>
+      <rect x="64.79" y="194.38" width="32.4" height="32.4" fill="#0074FF"/><rect x="97.19" y="194.38" width="32.4" height="32.4" fill="#0074FF"/>
+      <rect x="129.58" y="194.38" width="32.4" height="32.4" fill="#0074FF"/><rect x="161.98" y="194.38" width="32.4" height="32.4" fill="#0074FF"/>
+      <rect x="194.38" y="194.38" width="32.4" height="32.4" fill="#0074FF"/>
+    </svg>
+    <div><h2>AYMAN ELMASRY</h2><p>AEL Digital Studio</p></div>
+  </div>
+  <div class="title"><h1>Color OS</h1><span class="badge">v1 · Palette Engine</span></div>
+</div>
+
+<div class="doc-tabs" id="docTabNav">
+  <button class="doc-tab active" data-tab="overview"><i class="fas fa-home"></i> Overview</button>
+  <button class="doc-tab" data-tab="generate"><i class="fas fa-palette"></i> Generate</button>
+  <button class="doc-tab" data-tab="palette"><i class="fas fa-th-large"></i> Palette</button>
+  <button class="doc-tab" data-tab="export"><i class="fas fa-download"></i> Export</button>
+  <button class="doc-tab" data-tab="uses"><i class="fas fa-lightbulb"></i> Use Cases</button>
+  <button class="doc-tab" data-tab="about"><i class="fas fa-info-circle"></i> About</button>
+</div>
+
+<div class="doc-pane active" id="pane-overview">
+  <div class="hero">
+    <h1>AEL Color OS</h1>
+    <p>An AI-driven color system generator that transforms project descriptions into semantic color palettes with WCAG analysis, design tokens, and multi-format export.</p>
+    <div class="hero-badges">
+      <span class="badge"><i class="fas fa-paint-brush"></i> 4 Generation Modes</span>
+      <span class="badge"><i class="fas fa-chart-bar"></i> 8 Decision Scores</span>
+      <span class="badge"><i class="fas fa-file-code"></i> CSS / Tailwind / JSON</span>
+      <span class="badge"><i class="fas fa-universal-access"></i> WCAG Analysis</span>
+    </div>
+  </div>
+
+  <div class="project-preview">
+    <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="background:radial-gradient(circle at 20% 30%,#030712,#000)">
+      <rect x="0" y="0" width="700" height="320" fill="none"/>
+      <rect x="25" y="20" width="650" height="50" rx="12" fill="rgba(5,12,24,.7)" stroke="rgba(0,116,255,.4)" stroke-width="1"/>
+      <text x="45" y="50" fill="#eef2ff" font-family="monospace" font-size="12" font-weight="bold">AYMAN ELMASRY</text>
+      <text x="160" y="50" fill="#8db7ff" font-family="monospace" font-size="10">AEL Digital Studio</text>
+      <text x="570" y="50" fill="#fff" font-family="monospace" font-size="10" font-weight="bold">Color OS v1</text>
+
+      <rect x="25" y="85" width="250" height="215" rx="12" fill="rgba(5,12,24,.7)" stroke="rgba(0,116,255,.4)" stroke-width="1"/>
+      <rect x="40" y="95" width="220" height="26" rx="40" fill="rgba(0,116,255,.2)" stroke="#0074FF" stroke-width="1"/>
+      <text x="70" y="112" fill="#fff" font-family="monospace" font-size="9" font-weight="bold">1. MISSION</text>
+      <text x="145" y="112" fill="#fff" font-family="monospace" font-size="9" font-weight="bold">2. EVOLVE</text>
+      <rect x="40" y="130" width="220" height="40" rx="8" fill="rgba(0,0,0,.3)" stroke="rgba(0,116,255,.45)" stroke-width="1" stroke-dasharray="4"/>
+      <text x="50" y="150" fill="#0074FF" font-family="monospace" font-size="9">MISSION</text>
+      <text x="50" y="163" fill="#64748b" font-family="monospace" font-size="8">AI cybersecurity platform...</text>
+      <rect x="40" y="175" width="220" height="30" rx="60" fill="#0074FF"/>
+      <text x="150" y="195" fill="#fff" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle">Generate Palette</text>
+
+      <rect x="40" y="213" width="220" height="42" rx="10" fill="#0074FF"/>
+      <rect x="48" y="221" width="55" height="26" rx="5" fill="rgba(0,0,0,.55)"/>
+      <text x="75" y="238" fill="#fff" font-family="monospace" font-size="11" text-anchor="middle">#1B31DA</text>
+
+      <rect x="295" y="85" width="380" height="100" rx="12" fill="rgba(5,12,24,.75)" stroke="rgba(0,116,255,.4)" stroke-width="1"/>
+      <text x="315" y="110" fill="#fff" font-family="monospace" font-size="12" font-weight="bold">Palette</text>
+      <rect x="315" y="120" width="50" height="40" rx="5" fill="#1B31DA"/>
+      <rect x="375" y="120" width="50" height="40" rx="5" fill="#D4D8FF"/>
+      <rect x="435" y="120" width="50" height="40" rx="5" fill="#00B386"/>
+      <rect x="495" y="120" width="50" height="40" rx="5" fill="#FF4D4D"/>
+      <rect x="555" y="120" width="50" height="40" rx="5" fill="#F5F7FA" stroke="#2d4b7c" stroke-width="1"/>
+
+      <rect x="295" y="200" width="380" height="100" rx="12" fill="rgba(5,12,24,.75)" stroke="rgba(0,116,255,.4)" stroke-width="1"/>
+      <text x="315" y="223" fill="#0074FF" font-family="monospace" font-size="9" font-weight="bold">DECISION SCORES</text>
+      <rect x="315" y="233" width="100" height="4" rx="2" fill="#1e2a44"/>
+      <rect x="315" y="233" width="80" height="4" rx="2" fill="#0074FF"/>
+      <text x="425" y="237" fill="#a5d6ff" font-family="monospace" font-size="7">Trust 85%</text>
+      <rect x="315" y="243" width="100" height="4" rx="2" fill="#1e2a44"/>
+      <rect x="315" y="243" width="60" height="4" rx="2" fill="#0074FF"/>
+      <text x="425" y="247" fill="#a5d6ff" font-family="monospace" font-size="7">Authority 72%</text>
+      <rect x="315" y="253" width="100" height="4" rx="2" fill="#1e2a44"/>
+      <rect x="315" y="253" width="45" height="4" rx="2" fill="#a5d6ff"/>
+      <text x="425" y="257" fill="#a5d6ff" font-family="monospace" font-size="7">Innovation 53%</text>
+      <rect x="315" y="263" width="100" height="4" rx="2" fill="#1e2a44"/>
+      <rect x="315" y="263" width="90" height="4" rx="2" fill="#00ff88"/>
+      <text x="425" y="267" fill="#a5d6ff" font-family="monospace" font-size="7">Accessibility 93%</text>
+      <rect x="315" y="273" width="100" height="4" rx="2" fill="#1e2a44"/>
+      <rect x="315" y="273" width="30" height="4" rx="2" fill="#64748b"/>
+      <text x="425" y="277" fill="#a5d6ff" font-family="monospace" font-size="7">Risk 31%</text>
+    </svg>
+  </div>
+
+  <div class="feature-grid" style="margin-top:1.5rem">
+    <div class="feature-card">
+      <span class="icon"><i class="fas fa-comment"></i></span>
+      <h3>Text-to-Palette</h3>
+      <p>Describe your project and let the semantic engine infer the perfect color system based on industry and audience vectors.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon"><i class="fas fa-chart-line"></i></span>
+      <h3>8 Decision Scores</h3>
+      <p>Trust, Authority, Innovation, Luxury, Accessibility, Memorability, Confidence, and Risk — all computed in real time.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon"><i class="fas fa-file-export"></i></span>
+      <h3>Multi-Format Export</h3>
+      <p>Export your color system as CSS custom properties, Tailwind config, or structured JSON design tokens.</p>
+    </div>
+  </div>
+</div>
+
+<div class="doc-pane" id="pane-generate">
+  <div class="layout">
+    <div class="sidebar">
+      <div class="pills" id="modePills"></div>
+      <div id="modeInputs"></div>
+      <div>
+        <h3 style="font-size:.7rem;font-family:monospace;color:#0074FF;margin-bottom:8px">COMPUTED ANCHOR</h3>
+        <div class="swatch" id="livePreview"><span class="hex-badge" id="hexBadge">#0074FF</span></div>
+        <div class="slider-group"><label>Hue <span id="hVal">212°</span></label><input type="range" id="hue" min="0" max="360" value="212"></div>
+        <div class="slider-group"><label>Saturation <span id="sVal">100%</span></label><input type="range" id="sat" min="0" max="100" value="100"></div>
+        <div class="slider-group"><label>Lightness <span id="lVal">50%</span></label><input type="range" id="light" min="0" max="100" value="50"></div>
+      </div>
+      <div class="scores" id="scorePanel"><h4>DECISION SCORES</h4></div>
+      <div class="memory">
+        <h4>COLOR MEMORY</h4>
+        <div class="m-grid" id="memoryGrid"></div>
+        <div class="inline">
+          <button class="btn-sm" id="saveColorBtn">Save Color</button>
+          <button class="btn-sm" id="clearMemoryBtn" style="color:#ef4444;border:1px solid #ef444450">Clear All</button>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="tabs" id="tabBar"></div>
+      <div id="tabContent"></div>
+    </div>
+  </div>
+</div>
+
+<div class="doc-pane" id="pane-palette">
+  <h3 class="section-title">Color System Architecture</h3>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <span class="icon"><i class="fas fa-vector-square"></i></span>
+      <h3>Primary & Secondary</h3>
+      <p>Anchor colors derived from semantic vector analysis. The hue is computed from weighted industry and audience dimensions.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon"><i class="fas fa-check-circle"></i></span>
+      <h3>Semantic Status Colors</h3>
+      <p>Success, Warning, and Danger are automatically generated from your anchor hue with optimized saturation and lightness.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon"><i class="fas fa-layer-group"></i></span>
+      <h3>Surface & Typography</h3>
+      <p>Background, surface, and text colors are computed for optimal readability and WCAG AA/AAA compliance.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon"><i class="fas fa-palette"></i></span>
+      <h3>Smart Palette Strategy</h3>
+      <p>Automatically selects Analogous, Complementary, Monochromatic, Split-Complementary, or Triadic based on your industry.</p>
+    </div>
+  </div>
+</div>
+
+<div class="doc-pane" id="pane-export">
+  <h3 class="section-title">Export Formats</h3>
+  <div class="export-grid">
+    <div class="export-card">
+      <h3>CSS Custom Properties</h3>
+      <pre>--color-primary: #1B31DA;
+--color-secondary: #D4D8FF;
+--color-success: #00B386;
+--color-warning: #FF8C42;
+--color-danger: #FF4D4D;
+--color-surface: #F5F7FA;
+--color-background: #EEF0F8;
+--color-text: #0B0E1A;</pre>
+    </div>
+    <div class="export-card">
+      <h3>Tailwind Config</h3>
+      <pre>colors: {
+  brand: { DEFAULT: '#1B31DA',
+    secondary: '#D4D8FF' },
+  surface: '#F5F7FA',
+  bg: '#EEF0F8',
+  status: {
+    success: '#00B386',
+    danger: '#FF4D4D',
+    warning: '#FF8C42'
+  }
+}</pre>
+    </div>
+    <div class="export-card">
+      <h3>JSON Design Tokens</h3>
+      <pre>{
+  "brand": { "primary": { "value": "#1B31DA" } },
+  "semantic": { "success": { "value": "#00B386" } },
+  "layout": { "surface": { "value": "#F5F7FA" } }
+}</pre>
+    </div>
+  </div>
+</div>
+
+<div class="doc-pane" id="pane-uses">
+  <h3 class="section-title">Use Cases</h3>
+  <div class="use-cases">
+    <div class="use-card">
+      <h4>Brand Identity Design</h4>
+      <p>Generate complete color systems from a brand description. Get primary, secondary, and semantic colors with accessibility scores.</p>
+    </div>
+    <div class="use-card">
+      <h4>UI Design Systems</h4>
+      <p>Create consistent color tokens for your design system. Export directly to CSS variables for immediate use in your codebase.</p>
+    </div>
+    <div class="use-card">
+      <h4>Accessibility Compliance</h4>
+      <p>Ensure WCAG AA/AAA compliance with built-in contrast analysis. Scores for every color combination are computed in real time.</p>
+    </div>
+    <div class="use-card">
+      <h4>Prompt Engineering</h4>
+      <p>Use the Evolve mode to analyze and enhance color-related prompts. Get quality scores and missing semantic layer suggestions.</p>
+    </div>
+    <div class="use-card">
+      <h4>Client Presentations</h4>
+      <p>Generate professional color systems during client meetings. The live preview and decision scores provide data-driven rationale.</p>
+    </div>
+    <div class="use-card">
+      <h4>Design Token Migration</h4>
+      <p>Migrate existing color systems to standardized design tokens. Input hex codes and get structured CSS, Tailwind, and JSON output.</p>
+    </div>
+  </div>
+</div>
+
+<div class="doc-pane" id="pane-about">
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>About AEL Color OS</h3>
+      <p>AEL Color OS is a semantic color system generator that uses AI-driven vector analysis to transform project descriptions into complete, accessible color systems. Built for designers, developers, and brand strategists who need data-driven color decisions.</p>
+    </div>
+    <div class="about-card">
+      <h3>Tech Stack</h3>
+      <ul>
+        <li>Vanilla JavaScript (ES6+ Classes)</li>
+        <li>HSL/Hex/RGB Color Math</li>
+        <li>WCAG Contrast Ratio Engine</li>
+        <li>Semantic Vector Analysis</li>
+        <li>CSS3 Glassmorphism</li>
+        <li>HTML5 Semantic Markup</li>
+      </ul>
+    </div>
+    <div class="about-card">
+      <h3>Version History</h3>
+      <ul>
+        <li>v1.0 — Modular split (HTML/CSS/JS)</li>
+        <li>v0.9 — Export formats added</li>
+        <li>v0.8 — Evolve mode introduced</li>
+        <li>v0.5 — Initial color engine</li>
+      </ul>
+    </div>
+    <div class="about-card">
+      <h3>Contact & Links</h3>
+      <div class="contact-info">
+        <p><strong>Creator:</strong> Ayman Elmasry</p>
+        <p><strong>Studio:</strong> AEL Digital Studio</p>
+        <p><strong>Email:</strong> <a href="mailto:info@aymanelmasry.com">info@aymanelmasry.com</a></p>
+        <p><strong>Live Site:</strong> <a href="https://aymanelmasryael.github.io/ael-color-os/">ael-color-os</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/aymanelmasryael/ael-color-os">github.com/aymanelmasryael/ael-color-os</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">&copy; 2026 Ayman Elmasry — AEL Digital Studio | Color OS v1</div>
+<div id="toast">Copied</div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="ael_color_os.js"></script>
+</body>
+</html>
