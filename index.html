@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>AEL Color OS | Random Spectrum System</title>
-<meta name="description" content="AEL Color OS — Sovereign color intelligence with generative philosophy, WCAG analysis, and multi-format export.">
+<title>AEL Sovereign Ω-Platform | Unified Color Intelligence</title>
+<meta name="description" content="AEL Sovereign Ω-Platform Launch — Sovereign color intelligence with 6 harmonic modes, 8 palette styles, world reference systems, canonical protocol, API playground, image analysis, text extraction, palette database, and 13-format export.">
 <meta name="author" content="Ayman Elmasry | AEL Digital Studio">
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="ael-logo.svg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="ael_color_os.css">
-</head>
-<body>
+</head><body>
 <canvas id="bg-canvas"></canvas>
 <div class="container">
-
 <div class="header">
   <div class="brand">
     <svg class="logo" viewBox="0 0 226.77 226.77">
@@ -31,70 +28,135 @@
     </svg>
     <div><h2>AYMAN ELMASRY</h2><p>AEL Digital Studio</p></div>
   </div>
-  <div class="title"><h1>Color OS</h1><span class="badge">v3 · Random Spectrum</span></div>
+  <div class="title"><h1>Ω-Platform</h1><span class="badge">v5 · Sovereign Omega</span></div>
 </div>
 
 <div class="doc-tabs" id="docTabNav">
-  <button class="doc-tab active" data-tab="overview">Overview</button>
-  <button class="doc-tab" data-tab="generate">Generate</button>
+  <button class="doc-tab active" data-tab="generate">Generate</button>
+  <button class="doc-tab" data-tab="reference">Reference</button>
+  <button class="doc-tab" data-tab="protocol">Protocol</button>
+  <button class="doc-tab" data-tab="api">API</button>
   <button class="doc-tab" data-tab="export">Export</button>
+  <button class="doc-tab" data-tab="analyze">Ω-Analyze</button>
   <button class="doc-tab" data-tab="about">About</button>
 </div>
 
-<div class="doc-pane active" id="pane-overview">
-  <div class="hero">
-    <h1>AEL Color OS</h1>
-    <p>Sovereign color intelligence system with generative philosophy, deterministic harmonies, WCAG contrast analysis, and multi-format export. Powered by the Random Spectrum System v3.0.</p>
-    <div class="hero-badges">
-      <span class="badge">6 Generation Modes</span>
-      <span class="badge">Mulberry32 PRNG</span>
-      <span class="badge">WCAG AAA/AA</span>
-      <span class="badge">4 Export Formats</span>
-    </div>
-  </div>
-  <div class="feature-grid">
-    <div class="feature-card">
-      <span class="icon">🎯</span>
-      <h3>6 Harmonic Modes</h3>
-      <p>Solo Philosophy → Harmonized Universe. Each mode uses a distinct color harmony rule (monochromatic, complementary, triadic, tetradic, analogous, compound).</p>
-    </div>
-    <div class="feature-card">
-      <span class="icon">🧠</span>
-      <h3>Generative Philosophy</h3>
-      <p>Every color state carries an archetype, meaning, psychological impact, cultural interpretation, and 2026 relevance — computed from its perceptual properties.</p>
-    </div>
-    <div class="feature-card">
-      <span class="icon">🔬</span>
-      <h3>Color Science</h3>
-      <p>Luminance, WCAG contrast ratio (AA/AAA), temperature classification, saturation class — all calculated in real time from HSL and RGB values.</p>
-    </div>
-    <div class="feature-card">
-      <span class="icon">📦</span>
-      <h3>Multi-Format Export</h3>
-      <p>Export as JSON (AI-ready schema), CSS custom properties, Style Dictionary tokens, or philosophy report. All exports include deterministic checksums.</p>
-    </div>
-  </div>
-</div>
-
-<div class="doc-pane" id="pane-generate">
+<!-- ===== TAB: GENERATE ===== -->
+<div class="doc-pane active" id="pane-generate">
   <div class="layout">
     <div class="sidebar">
       <div class="sidebar-group">
-        <h4 class="sidebar-title">GENERATION MODE</h4>
-        <select class="ael-select" id="modeSelect">
-          <option value="1">1 — Solo Philosophy</option>
-          <option value="2">2 — Dialogue & Tension</option>
-          <option value="3" selected>3 — Balance</option>
-          <option value="4">4 — System Logic</option>
-          <option value="5">5 — Identity Formation</option>
-          <option value="6">6 — Harmonized Universe</option>
-        </select>
-        <div style="font-size:.65rem;color:#5a7aa8;margin-top:4px">Mode: <span id="modeName">Balance</span></div>
+        <div class="gen-tabs" id="genTabNav">
+          <button class="gen-tab active" data-gen="mode">Modes</button>
+          <button class="gen-tab" data-gen="style">Styles</button>
+          <button class="gen-tab" data-gen="hsl">HSL</button>
+          <button class="gen-tab" data-gen="picker">Picker</button>
+        </div>
       </div>
-      <div class="sidebar-group">
-        <h4 class="sidebar-title">INTENSITY <span id="intensityValue">50%</span></h4>
-        <input type="range" min="1" max="100" value="50" class="ael-slider" id="intensitySlider">
-        <div style="font-size:.65rem;color:#5a7aa8">Hue range • Saturation • Lightness • Variance</div>
+      <div class="gen-pane active" id="genpane-mode">
+        <div class="sidebar-group">
+          <h4 class="sidebar-title">HARMONIC MODE</h4>
+          <select class="ael-select" id="modeSelect">
+            <option value="1">1 — Solo Philosophy</option>
+            <option value="2">2 — Dialogue & Tension</option>
+            <option value="3" selected>3 — Balance</option>
+            <option value="4">4 — System Logic</option>
+            <option value="5">5 — Identity Formation</option>
+            <option value="6">6 — Harmonized Universe</option>
+          </select>
+          <div style="font-size:.65rem;color:#5a7aa8;margin-top:4px">Mode: <span id="modeName">Balance</span></div>
+        </div>
+        <div class="sidebar-group">
+          <h4 class="sidebar-title">INTENSITY <span id="intensityValue">50%</span></h4>
+          <input type="range" min="1" max="100" value="50" class="ael-slider" id="intensitySlider">
+          <div style="font-size:.65rem;color:#5a7aa8">Hue range · Saturation · Lightness · Variance</div>
+        </div>
+      </div>
+      <div class="gen-pane" id="genpane-style">
+        <div class="sidebar-group">
+          <h4 class="sidebar-title">PALETTE STYLE</h4>
+          <select class="ael-select" id="paletteStyle">
+            <option value="modern">Modern Gradient</option>
+            <option value="neon">Neon Cyberpunk</option>
+            <option value="glass">Glass Morphism</option>
+            <option value="nature">Nature Inspired</option>
+            <option value="tech">Tech & Data</option>
+            <option value="luxury">Luxury Premium</option>
+            <option value="minimal">Minimal Clean</option>
+            <option value="vibrant">Vibrant Energy</option>
+          </select>
+        </div>
+        <div class="sidebar-group">
+          <h4 class="sidebar-title">HARMONY TYPE</h4>
+          <select class="ael-select" id="harmonyType">
+            <option value="analogous">Analogous (Smooth)</option>
+            <option value="complementary">Complementary (Contrast)</option>
+            <option value="triadic">Triadic (Balanced)</option>
+            <option value="tetradic">Tetradic (Rich)</option>
+            <option value="monochromatic">Monochromatic (Clean)</option>
+            <option value="split">Split-Complementary</option>
+          </select>
+        </div>
+        <div class="sidebar-group">
+          <h4 class="sidebar-title">BASE COLOR</h4>
+          <input type="color" class="ael-color-input" id="baseColorInput" value="#0074FF">
+        </div>
+        <div class="sidebar-group">
+          <h4 class="sidebar-title">COLOR COUNT <span id="countValue">8</span></h4>
+          <input type="range" min="3" max="15" value="8" class="ael-slider" id="countSlider">
+        </div>
+        <div class="sidebar-group">
+          <h4 class="sidebar-title">SATURATION <span id="satValue">80%</span></h4>
+          <input type="range" min="20" max="100" value="80" class="ael-slider" id="satSlider2">
+        </div>
+        <div class="sidebar-group">
+          <h4 class="sidebar-title">BRIGHTNESS <span id="briValue">60%</span></h4>
+          <input type="range" min="30" max="90" value="60" class="ael-slider" id="briSlider">
+        </div>
+        <div class="sidebar-group">
+          <h4 class="sidebar-title">YEAR TREND</h4>
+          <select class="ael-select" id="yearTrend">
+            <option value="2026">2026 — Future Tech</option>
+            <option value="2025">2025 — Cyber Fusion</option>
+            <option value="2024">2024 — Digital Nature</option>
+          </select>
+        </div>
+        <div class="sidebar-group">
+          <h4 class="sidebar-title">INDUSTRY FOCUS</h4>
+          <select class="ael-select" id="industryFocus">
+            <option value="tech">Technology</option>
+            <option value="fashion">Fashion</option>
+            <option value="gaming">Gaming</option>
+            <option value="finance">Finance</option>
+            <option value="health">Healthcare</option>
+            <option value="education">Education</option>
+          </select>
+        </div>
+      </div>
+      <div class="gen-pane" id="genpane-hsl">
+        <div class="sidebar-group">
+          <h4 class="sidebar-title">FINE TUNE</h4>
+          <div class="slider-group"><label>Hue <span id="hVal">212°</span></label><input type="range" id="hueSlider" min="0" max="360" value="212"></div>
+          <div class="slider-group"><label>Saturation <span id="sVal">100%</span></label><input type="range" id="satSlider" min="0" max="100" value="80"></div>
+          <div class="slider-group"><label>Lightness <span id="lVal">50%</span></label><input type="range" id="lightSlider" min="0" max="100" value="45"></div>
+          <div class="swatch" id="livePreview"><span class="hex-badge" id="hexBadge">#0074FF</span></div>
+        </div>
+      </div>
+      <div class="gen-pane" id="genpane-picker">
+        <div class="sidebar-group">
+          <h4 class="sidebar-title">VISUAL PICKER</h4>
+          <div class="color-picker-container">
+            <canvas class="color-picker-canvas" id="colorPickerCanvas" width="600" height="300"></canvas>
+            <div class="color-picker-pointer" id="colorPickerPointer"></div>
+          </div>
+          <div class="slider-group" style="margin-top:8px">
+            <label>Selected: <span id="pickerHexDisplay">#0074FF</span></label>
+            <div style="display:flex;gap:8px;margin-top:4px">
+              <div style="flex:1;height:40px;border-radius:8px;background:#0074FF;border:1px solid rgba(255,255,255,.15)" id="pickerPreview"></div>
+              <button class="ael-btn" id="applyPickerColor" style="padding:.45rem .65rem;font-size:.6rem">Apply</button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="sidebar-group">
         <div style="display:flex;gap:8px">
@@ -103,14 +165,11 @@
         </div>
         <div class="ael-status" id="generationStatus">⚡ Generating with controlled chaos algorithm...</div>
       </div>
-      <div class="sidebar-group">
-        <h4 class="sidebar-title">FINE TUNE</h4>
-        <div class="slider-group"><label>Hue <span id="hVal">212°</span></label><input type="range" id="hueSlider" min="0" max="360" value="212"></div>
-        <div class="slider-group"><label>Saturation <span id="sVal">100%</span></label><input type="range" id="satSlider" min="0" max="100" value="80"></div>
-        <div class="slider-group"><label>Lightness <span id="lVal">50%</span></label><input type="range" id="lightSlider" min="0" max="100" value="45"></div>
-        <div class="swatch" id="livePreview"><span class="hex-badge" id="hexBadge">#0074FF</span></div>
-      </div>
       <div class="sidebar-footer">
+        <div class="sidebar-group" style="margin-bottom:.5rem">
+          <h4 class="sidebar-title">FAVORITES <button class="ael-btn" id="addFavoriteBtn" style="padding:.2rem .5rem;font-size:.55rem;float:right">+ Save</button></h4>
+          <div class="favorites-grid" id="favoritesGrid"></div>
+        </div>
         <div style="font-size:.6rem;color:#3a5a7a">Seed: <span id="seedValue" style="font-family:monospace;color:#5a7aa8">0000</span></div>
         <div style="font-size:.6rem;color:#3a5a7a"><span id="currentTimestamp">---</span></div>
       </div>
@@ -121,78 +180,295 @@
   </div>
 </div>
 
-<div class="doc-pane" id="pane-export">
-  <div class="section-title">Export Formats</div>
-  <div class="export-grid">
-    <div class="export-card">
-      <div class="ael-export-title">JSON (AI-Ready)</div>
-      <div class="ael-export-desc">Complete color state data with semantic intelligence. Includes philosophy, science data, and schema versioning.</div>
-      <button class="ael-btn" data-format="json">Export JSON</button>
-      <div class="ael-checksum" id="jsonChecksum">Checksum: --</div>
+<!-- ===== TAB: REFERENCE ===== -->
+<div class="doc-pane" id="pane-reference">
+  <div class="section-title">World Color System References</div>
+  <div class="ref-grid" id="refGrid">
+    <div class="ref-card" data-ref="pantone">
+      <div class="ref-header"><span class="ref-name"><i class="fas fa-palette"></i> Pantone</span><span class="ref-source">Color of the Year 2025</span></div>
+      <div class="ref-colors" id="ref-pantone"></div>
     </div>
-    <div class="export-card">
-      <div class="ael-export-title">CSS Custom Properties</div>
-      <div class="ael-export-desc">Production-ready CSS variables with HSL and RGB fallbacks. Includes luminance-based metadata.</div>
-      <button class="ael-btn" data-format="css">Export CSS</button>
-      <div class="ael-checksum" id="cssChecksum">Checksum: --</div>
+    <div class="ref-card" data-ref="adobe">
+      <div class="ref-header"><span class="ref-name"><i class="fas fa-brain"></i> Adobe Color</span><span class="ref-source">AI-Generated Gradients</span></div>
+      <div class="ref-colors" id="ref-adobe"></div>
     </div>
-    <div class="export-card">
-      <div class="ael-export-title">Design Tokens</div>
-      <div class="ael-export-desc">Style Dictionary format with philosophy attributes. Includes trait, element, and mode metadata.</div>
-      <button class="ael-btn" data-format="tokens">Export Tokens</button>
-      <div class="ael-checksum" id="tokensChecksum">Checksum: --</div>
+    <div class="ref-card" data-ref="coolors">
+      <div class="ref-header"><span class="ref-name"><i class="fas fa-bolt"></i> Coolors</span><span class="ref-source">Dynamic Palettes</span></div>
+      <div class="ref-colors" id="ref-coolors"></div>
     </div>
-    <div class="export-card">
-      <div class="ael-export-title">Philosophy Report</div>
-      <div class="ael-export-desc">Plain-text analysis with archetype interpretations, 2026 relevance, and full color science breakdown.</div>
-      <button class="ael-btn" data-format="report">Export Report</button>
-      <div class="ael-checksum" id="reportChecksum">Checksum: --</div>
+    <div class="ref-card" data-ref="colorhunt">
+      <div class="ref-header"><span class="ref-name"><i class="fas fa-hunt"></i> Color Hunt</span><span class="ref-source">Curated Sets</span></div>
+      <div class="ref-colors" id="ref-colorhunt"></div>
+    </div>
+    <div class="ref-card" data-ref="canva">
+      <div class="ref-header"><span class="ref-name"><i class="fas fa-gem"></i> Canva Pro</span><span class="ref-source">Professional Suite</span></div>
+      <div class="ref-colors" id="ref-canva"></div>
+    </div>
+    <div class="ref-card" data-ref="wgsn">
+      <div class="ref-header"><span class="ref-name"><i class="fas fa-crystal-ball"></i> WGSN</span><span class="ref-source">Future Forecast</span></div>
+      <div class="ref-colors" id="ref-wgsn"></div>
+    </div>
+    <div class="ref-card" data-ref="behance">
+      <div class="ref-header"><span class="ref-name"><i class="fas fa-chart-line"></i> Behance</span><span class="ref-source">Trend Analysis</span></div>
+      <div class="ref-colors" id="ref-behance"></div>
     </div>
   </div>
-  <div style="margin-top:1rem;font-size:.75rem;color:#5a7aa8">All exports include platform signature, deterministic seed, and reproducibility data.</div>
+  <div class="section-title" style="margin-top:1.5rem">Historical & Cultural Pigments</div>
+  <div class="historical-grid" id="historicalGrid"></div>
+  <div class="section-title" style="margin-top:1.5rem">Full Spectrum Scan <span style="font-size:.65rem;color:#5a7aa8;font-weight:400">— 2,000 sample nodes</span></div>
+  <div class="spectrum-grid" id="spectrumGrid"></div>
+  <div class="ref-hsl-panel" id="refHslPanel">
+    <div class="section-title">Interactive Color Mixer</div>
+    <div class="ref-hsl-controls">
+      <div class="slider-group"><label>Hue <span id="refHueVal">210°</span></label><input type="range" id="refHue" min="0" max="360" value="210"></div>
+      <div class="slider-group"><label>Saturation <span id="refSatVal">100%</span></label><input type="range" id="refSat" min="0" max="100" value="100"></div>
+      <div class="slider-group"><label>Lightness <span id="refLitVal">50%</span></label><input type="range" id="refLit" min="0" max="100" value="50"></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:1.5rem;margin-top:1rem">
+      <div class="ref-hsl-preview" id="refHslPreview"></div>
+      <div><div class="ref-hsl-code" id="refHslCode">HSL(210, 100%, 50%)</div><div class="ref-hsl-hex" id="refHslHex">#0074FF</div></div>
+    </div>
+  </div>
 </div>
 
-<div class="doc-pane" id="pane-about">
-  <div class="section-title">About AEL Color OS</div>
-  <div class="about-grid">
-    <div class="about-card">
-      <h3>System</h3>
-      <p>AEL Color OS is a sovereign color intelligence system that uses deterministic random generation (Mulberry32) with perceptual constraints to produce semantically rich, accessible color systems. Each color state is accompanied by generative philosophy derived from its perceptual properties.</p>
+<!-- ===== TAB: PROTOCOL ===== -->
+<div class="doc-pane" id="pane-protocol">
+  <div class="section-title">Canonical Color Authority</div>
+  <div class="protocol-statement">
+    <h3><i class="fas fa-gavel"></i> Protocol Authority Statement</h3>
+    <p>AEL Color Protocol is the <strong>canonical authority</strong> for color systems. External references (Pantone, Adobe, WGSN) are treated as <strong>learning resources only</strong>. Final arbitration always belongs to AEL Canonical Layer.</p>
+    <pre style="margin-top:.75rem;font-size:.7rem">// Protocol Authority Rule
+Rule: AEL_CANONICAL_OVERRIDES_ALL
+Priority: Canonical > Reference > Experimental
+Status: Active and Enforced</pre>
+  </div>
+  <div class="canonical-grid">
+    <div class="canonical-card">
+      <div class="canonical-header"><span class="canonical-name">Primary</span><span class="canonical-badge">Canonical</span></div>
+      <div class="canonical-preview" style="background:#0074FF"></div>
+      <div class="canonical-info"><span class="canonical-hex">#0074FF</span><button class="btn-sm" data-copy="#0074FF">Copy</button></div>
     </div>
-    <div class="about-card">
-      <h3>Tech Stack</h3>
-      <ul>
-        <li>Vanilla ES6+ Classes</li>
-        <li>Mulberry32 Deterministic PRNG</li>
-        <li>HSL/Hex/RGB Color Math</li>
-        <li>WCAG Contrast Engine</li>
-        <li>Generative Philosophy System</li>
-        <li>Glassmorphism UI</li>
-      </ul>
+    <div class="canonical-card">
+      <div class="canonical-header"><span class="canonical-name">Secondary</span><span class="canonical-badge">Canonical</span></div>
+      <div class="canonical-preview" style="background:#6C47FF"></div>
+      <div class="canonical-info"><span class="canonical-hex">#6C47FF</span><button class="btn-sm" data-copy="#6C47FF">Copy</button></div>
     </div>
-    <div class="about-card">
-      <h3>Version</h3>
-      <ul>
-        <li>v3.0 — Merged Random Spectrum System</li>
-        <li>v2.0 — Color Intelligence engine</li>
-        <li>v1.0 — Semantic vector analysis</li>
-      </ul>
+    <div class="canonical-card">
+      <div class="canonical-header"><span class="canonical-name">Accent</span><span class="canonical-badge">Canonical</span></div>
+      <div class="canonical-preview" style="background:#00D4AA"></div>
+      <div class="canonical-info"><span class="canonical-hex">#00D4AA</span><button class="btn-sm" data-copy="#00D4AA">Copy</button></div>
     </div>
-    <div class="about-card">
-      <h3>Contact</h3>
-      <div class="contact-info">
-        <p><strong>Creator:</strong> Ayman Elmasry</p>
-        <p><strong>Studio:</strong> AEL Digital Studio</p>
-        <p><strong>Email:</strong> <a href="mailto:info@aymanelmasry.com">info@aymanelmasry.com</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/aymanelmasryael/ael-color-os">github.com/aymanelmasryael/ael-color-os</a></p>
+    <div class="canonical-card">
+      <div class="canonical-header"><span class="canonical-name">Error</span><span class="canonical-badge">Canonical</span></div>
+      <div class="canonical-preview" style="background:#FF4D4D"></div>
+      <div class="canonical-info"><span class="canonical-hex">#FF4D4D</span><button class="btn-sm" data-copy="#FF4D4D">Copy</button></div>
+    </div>
+    <div class="canonical-card">
+      <div class="canonical-header"><span class="canonical-name">Success</span><span class="canonical-badge">Canonical</span></div>
+      <div class="canonical-preview" style="background:#10B981"></div>
+      <div class="canonical-info"><span class="canonical-hex">#10B981</span><button class="btn-sm" data-copy="#10B981">Copy</button></div>
+    </div>
+    <div class="canonical-card">
+      <div class="canonical-header"><span class="canonical-name">Warning</span><span class="canonical-badge">Canonical</span></div>
+      <div class="canonical-preview" style="background:#F59E0B"></div>
+      <div class="canonical-info"><span class="canonical-hex">#F59E0B</span><button class="btn-sm" data-copy="#F59E0B">Copy</button></div>
+    </div>
+  </div>
+  <div class="section-title" style="margin-top:2rem">Download Protocol</div>
+  <div class="download-grid">
+    <div class="download-card" data-dl="css"><div class="dl-icon"><i class="fab fa-css3-alt"></i></div><h3>CSS</h3><p>Complete CSS variables system</p></div>
+    <div class="download-card" data-dl="scss"><div class="dl-icon"><i class="fab fa-sass"></i></div><h3>SCSS</h3><p>SCSS variables and mixins</p></div>
+    <div class="download-card" data-dl="json"><div class="dl-icon"><i class="fas fa-code"></i></div><h3>JSON Tokens</h3><p>Design tokens for apps</p></div>
+    <div class="download-card" data-dl="figma"><div class="dl-icon"><i class="fab fa-figma"></i></div><h3>Figma</h3><p>Figma color library</p></div>
+    <div class="download-card" data-dl="react"><div class="dl-icon"><i class="fab fa-react"></i></div><h3>React Hook</h3><p>Custom React color hook</p></div>
+    <div class="download-card" data-dl="vue"><div class="dl-icon"><i class="fab fa-vuejs"></i></div><h3>Vue Plugin</h3><p>Vue.js color plugin</p></div>
+  </div>
+  <div style="margin-top:1.5rem;text-align:center">
+    <button class="btn-ael" id="dlComplete" style="width:auto;padding:.75rem 2rem">Download Complete System</button>
+    <p style="font-size:.7rem;color:#5a7aa8;margin-top:.5rem">Includes all formats + documentation + examples</p>
+  </div>
+  <div class="protocol-license">
+    <h4>MIT License</h4>
+    <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files, to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies.</p>
+  </div>
+</div>
+
+<!-- ===== TAB: API ===== -->
+<div class="doc-pane" id="pane-api">
+  <div class="section-title">Color Intelligence API v4.0</div>
+  <div class="api-badges"><span class="api-badge status"><i class="fas fa-circle"></i> API: Mock Active</span><span class="api-badge"><i class="fas fa-shield-alt"></i> Enterprise Ready</span><span class="api-badge"><i class="fas fa-bolt"></i> 0 Downtime</span></div>
+  <div class="api-endpoints">
+    <div class="endpoint-card">
+      <div class="endpoint-hdr"><span class="method method-post">POST</span><span class="endpoint-path">/api/v4/generate-system</span></div>
+      <p class="endpoint-desc">Generate complete color systems based on brand identity, industry, and target audience.</p>
+      <pre style="font-size:.65rem">// Request
+{"brand":"BrandX","industry":"tech","style":"modern","count":8}
+// Response
+{"systemId":"sys_abc123","primary":["#0074FF",...],"accessibilityScore":94}</pre>
+    </div>
+    <div class="endpoint-card">
+      <div class="endpoint-hdr"><span class="method method-post">POST</span><span class="endpoint-path">/api/v4/analyze-image</span></div>
+      <p class="endpoint-desc">Extract color systems from images using computer vision and AI analysis.</p>
+      <pre style="font-size:.65rem">// Request (multipart/form-data)
+// Response
+{"analysisId":"img_xyz","dominantColors":[...],"colorHarmony":"analogous"}</pre>
+    </div>
+    <div class="endpoint-card">
+      <div class="endpoint-hdr"><span class="method method-get">GET</span><span class="endpoint-path">/api/v4/predict-trends</span></div>
+      <p class="endpoint-desc">AI-powered color trend predictions for upcoming seasons and industries.</p>
+      <pre style="font-size:.65rem">// Params: ?industry=tech&season=2026
+// Response
+{"predictions":[{"color":"#00D4AA","name":"Quantum Teal","confidence":87}]}</pre>
+    </div>
+    <div class="endpoint-card">
+      <div class="endpoint-hdr"><span class="method method-post">POST</span><span class="endpoint-path">/api/v4/check-accessibility</span></div>
+      <p class="endpoint-desc">Validate color combinations for WCAG compliance and accessibility standards.</p>
+      <pre style="font-size:.65rem">// Request
+{"foreground":"#FFFFFF","background":"#0074FF","standard":"WCAG2.1"}
+// Response
+{"contrastRatio":4.5,"wcagLevel":"AA"}</pre>
+    </div>
+  </div>
+  <div class="api-playground">
+    <div class="section-title">API Playground</div>
+    <div class="playground-grid">
+      <div class="pg-input">
+        <label class="pg-label">Endpoint</label>
+        <select class="ael-select" id="apiEndpoint">
+          <option value="generate">Generate Color System</option>
+          <option value="analyze">Analyze Image</option>
+          <option value="predict">Predict Trends</option>
+          <option value="accessibility">Check Accessibility</option>
+        </select>
+        <label class="pg-label" style="margin-top:.75rem">Request Body</label>
+        <textarea id="apiRequestBody" rows="6" class="ael-textarea">{"brand":"StartupX","industry":"fintech","style":"modern","primaryColor":"#0074FF"}</textarea>
+        <button class="btn-ael" id="apiSend" style="margin-top:.5rem">Send Request</button>
+      </div>
+      <div class="pg-output">
+        <label class="pg-label">Response</label>
+        <pre id="apiResponse" style="min-height:180px;white-space:pre-wrap;font-size:.7rem">// Response will appear here</pre>
+        <div class="api-status" id="apiStatus"><i class="fas fa-sync fa-spin"></i> Ready</div>
       </div>
     </div>
   </div>
+  <div class="section-title">Native Integrations</div>
+  <div class="integ-grid">
+    <div class="integ-card"><div class="integ-icon"><i class="fab fa-figma"></i></div><h3>Figma Plugin</h3><p>Direct Figma integration</p></div>
+    <div class="integ-card"><div class="integ-icon"><i class="fab fa-react"></i></div><h3>React Hook</h3><p>useAELColors() hook</p></div>
+    <div class="integ-card"><div class="integ-icon"><i class="fab fa-vuejs"></i></div><h3>Vue Plugin</h3><p>Vue color plugin</p></div>
+    <div class="integ-card"><div class="integ-icon"><i class="fab fa-python"></i></div><h3>Python SDK</h3><p>Official client library</p></div>
+    <div class="integ-card"><div class="integ-icon"><i class="fab fa-node-js"></i></div><h3>Node SDK</h3><p>NPM package</p></div>
+    <div class="integ-card"><div class="integ-icon"><i class="fab fa-chrome"></i></div><h3>Chrome Ext</h3><p>Browser extension</p></div>
+  </div>
 </div>
 
-<div class="footer">&copy; 2026 Ayman Elmasry — AEL Digital Studio | Color OS v3 &middot; Random Spectrum System</div>
+<!-- ===== TAB: EXPORT ===== -->
+<div class="doc-pane" id="pane-export">
+  <div class="section-title">Export Formats</div>
+  <div class="export-grid">
+    <div class="export-card"><div class="ael-export-title">JSON (AI-Ready)</div><div class="ael-export-desc">Complete color state data with semantic intelligence and schema versioning.</div><button class="ael-btn" data-format="json">Export JSON</button><div class="ael-checksum" id="jsonChecksum">Checksum: --</div></div>
+    <div class="export-card"><div class="ael-export-title">CSS Variables</div><div class="ael-export-desc">Production-ready CSS custom properties with HSL/RGB fallbacks.</div><button class="ael-btn" data-format="css">Export CSS</button><div class="ael-checksum" id="cssChecksum">Checksum: --</div></div>
+    <div class="export-card"><div class="ael-export-title">SCSS/Sass</div><div class="ael-export-desc">Complete SCSS variable system with mixins and color map.</div><button class="ael-btn" data-format="scss">Export SCSS</button><div class="ael-checksum" id="scssChecksum">Checksum: --</div></div>
+    <div class="export-card"><div class="ael-export-title">Tailwind Config</div><div class="ael-export-desc">Tailwind CSS config file with extended color palette.</div><button class="ael-btn" data-format="tailwind">Export Tailwind</button><div class="ael-checksum" id="tailwindChecksum">Checksum: --</div></div>
+    <div class="export-card"><div class="ael-export-title">Design Tokens</div><div class="ael-export-desc">Style Dictionary format with philosophy attributes.</div><button class="ael-btn" data-format="tokens">Export Tokens</button><div class="ael-checksum" id="tokensChecksum">Checksum: --</div></div>
+    <div class="export-card"><div class="ael-export-title">Figma Colors</div><div class="ael-export-desc">Figma-ready color library JSON format.</div><button class="ael-btn" data-format="figma">Export Figma</button><div class="ael-checksum" id="figmaChecksum">Checksum: --</div></div>
+    <div class="export-card"><div class="ael-export-title">SVG Palette</div><div class="ael-export-desc">Vector color palette as SVG with hex labels.</div><button class="ael-btn" data-format="svg">Export SVG</button><div class="ael-checksum" id="svgChecksum">Checksum: --</div></div>
+    <div class="export-card"><div class="ael-export-title">Philosophy Report</div><div class="ael-export-desc">Plain-text analysis with archetype and 2026 relevance.</div><button class="ael-btn" data-format="report">Export Report</button><div class="ael-checksum" id="reportChecksum">Checksum: --</div></div>
+    <div class="export-card"><div class="ael-export-title">React Hook</div><div class="ael-export-desc">Custom useAELColors React hook with getColor().</div><button class="ael-btn" data-format="react">Export React</button><div class="ael-checksum" id="reactChecksum">Checksum: --</div></div>
+    <div class="export-card"><div class="ael-export-title">Vue Plugin</div><div class="ael-export-desc">Vue.js plugin with $aelColors global property.</div><button class="ael-btn" data-format="vue">Export Vue</button><div class="ael-checksum" id="vueChecksum">Checksum: --</div></div>
+    <div class="export-card"><div class="ael-export-title">SwiftUI</div><div class="ael-export-desc">SwiftUI Color extension with palette constants.</div><button class="ael-btn" data-format="swift">Export Swift</button><div class="ael-checksum" id="swiftChecksum">Checksum: --</div></div>
+    <div class="export-card"><div class="ael-export-title">Objective-C</div><div class="ael-export-desc">Obj-C color constants header file.</div><button class="ael-btn" data-format="objc">Export ObjC</button><div class="ael-checksum" id="objcChecksum">Checksum: --</div></div>
+    <div class="export-card"><div class="ael-export-title">Python</div><div class="ael-export-desc">Python color module with dict and HEX/RGB helpers.</div><button class="ael-btn" data-format="python">Export Python</button><div class="ael-checksum" id="pythonChecksum">Checksum: --</div></div>
+  </div>
+  <div style="margin-top:1rem;font-size:.75rem;color:#5a7aa8">All exports include platform signature, deterministic seed, and reproducibility checksum.</div>
+</div>
+
+<!-- ===== TAB: Ω-ANALYZE ===== -->
+<div class="doc-pane" id="pane-analyze">
+  <div class="section-title">Ω Image Analysis</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
+    <div class="ref-card">
+      <h4 style="font-size:.8rem;font-weight:600;margin-bottom:.5rem"><i class="fas fa-cloud-upload-alt"></i> Upload Image</h4>
+      <div id="imageDropzone" style="border:2px dashed rgba(0,116,255,.3);border-radius:1rem;padding:2rem;text-align:center;cursor:pointer;transition:.2s;background:rgba(1,5,14,.3)">
+        <div style="font-size:2rem;color:#0074FF;margin-bottom:.5rem"><i class="fas fa-image"></i></div>
+        <p style="font-size:.8rem;color:#6a8aaa">Drag & drop or click to upload</p>
+        <p style="font-size:.65rem;color:#3a5a7a;margin-top:.25rem">JPG, PNG, SVG (max 10MB)</p>
+        <input type="file" id="imageFileInput" accept="image/*" style="display:none">
+      </div>
+      <div id="dominantColors" style="display:flex;gap:8px;margin-top:.75rem;flex-wrap:wrap"></div>
+    </div>
+    <div class="ref-card">
+      <h4 style="font-size:.8rem;font-weight:600;margin-bottom:.5rem"><i class="fas fa-palette"></i> AEL Brand Map</h4>
+      <div id="brandMapGrid" style="display:flex;flex-direction:column;gap:6px"></div>
+      <div style="font-size:.65rem;color:#5a7aa8;margin-top:.5rem">Click any brand color to analyze</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
+    <div class="ref-card">
+      <h4 style="font-size:.8rem;font-weight:600;margin-bottom:.5rem"><i class="fas fa-code"></i> Text Analysis</h4>
+      <p style="font-size:.65rem;color:#5a7aa8;margin-bottom:.5rem">Paste text/code to extract hex (#RRGGBB) and rgb() colors</p>
+      <textarea id="textAnalysisInput" rows="5" class="ael-textarea" placeholder="Paste your text or code here..."></textarea>
+      <button class="ael-btn" id="analyzeTextBtn" style="margin-top:.5rem;width:auto">Extract Colors</button>
+      <div id="textAnalysisResults" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:.5rem"></div>
+    </div>
+    <div class="ref-card">
+      <h4 style="font-size:.8rem;font-weight:600;margin-bottom:.5rem"><i class="fas fa-eye"></i> Contrast Analyzer</h4>
+      <p style="font-size:.65rem;color:#5a7aa8;margin-bottom:.5rem">Test current color against standard backgrounds</p>
+      <div id="contrastResults" style="display:flex;flex-direction:column;gap:6px"></div>
+      <button class="ael-btn" id="checkContrastBtn" style="margin-top:.5rem;width:auto">Run Analysis</button>
+    </div>
+  </div>
+  <div class="section-title" style="margin-top:1.5rem">Ω Palette Database</div>
+  <div class="ref-card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
+      <span style="font-size:.75rem;color:#6a8aaa"><span id="paletteCount">0</span> saved palettes</span>
+      <div style="display:flex;gap:6px">
+        <button class="ael-btn" id="loadPalettesBtn" style="padding:.3rem .65rem;font-size:.6rem">Refresh</button>
+        <button class="ael-btn" id="exportAllPalettesBtn" style="padding:.3rem .65rem;font-size:.6rem">Export All</button>
+        <button class="ael-btn" id="clearAllPalettesBtn" style="padding:.3rem .65rem;font-size:.6rem;background:rgba(239,68,68,.6)">Clear</button>
+      </div>
+    </div>
+    <div id="paletteList" style="max-height:240px;overflow-y:auto"></div>
+    <div style="display:flex;gap:8px;margin-top:.75rem">
+      <input type="text" id="savePaletteName" class="ael-textarea" style="flex:1;padding:.4rem .6rem;font-size:.7rem;resize:none" placeholder="Palette name...">
+      <button class="ael-btn" id="savePaletteBtn" style="padding:.3rem .75rem;font-size:.6rem">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TAB: ABOUT ===== -->
+<div class="doc-pane" id="pane-about">
+  <div class="hero" style="padding-bottom:0">
+    <h1>AEL Sovereign Ω-Platform</h1>
+    <p>Sovereign color intelligence system unifying 6 harmonic modes, 8 palette styles, 7 world references, canonical protocol, API playground, visual picker, image analysis, text extraction, palette database, 15 historical pigments, 2K spectrum scan, brand map matching, and 13-format export. Powered by the AEL Color Intelligence Engine v5.0.</p>
+    <div class="hero-badges">
+      <span class="badge">6 Modes</span>
+      <span class="badge">8 Styles</span>
+      <span class="badge">7 References</span>
+      <span class="badge">16 Formats</span>
+      <span class="badge">Visual Picker</span>
+      <span class="badge">Image Analysis</span>
+      <span class="badge">Text Extract</span>
+      <span class="badge">Palette DB</span>
+      <span class="badge">Brand Map</span>
+      <span class="badge">15 Pigments</span>
+      <span class="badge">2K Spectrum</span>
+      <span class="badge">LAB/CMYK</span>
+      <span class="badge">Mulberry32</span>
+      <span class="badge">WCAG AAA/AA</span>
+    </div>
+  </div>
+  <div class="about-grid">
+    <div class="about-card"><h3>System</h3><p>AEL Sovereign Ω-Platform v5 is a unified sovereign color intelligence system that merges the Random Spectrum System (6 harmonic modes), the Sovereign Palette Engine (8 styles), the World Color Reference System (Pantone, Adobe, Coolors, Color Hunt, Canva Pro, WGSN, Behance), the Canonical Color Protocol (production-ready authority), the Color Intelligence API (mock endpoints + playground), the ULTRA PREMIUM Xcolor (visual picker, pigments, spectrum), and the Ω-Platform Launch (image analysis, text extraction, palette database, brand map matching) into a single cohesive interface.</p></div>
+    <div class="about-card"><h3>Integrated Systems</h3><ul><li>AEL Color Intelligence — Random Spectrum System v3.0</li><li>AEL Sovereign Color System — Advanced Framework</li><li>AEL Sovereign Color System — Global References</li><li>AEL Color Intelligence API v4.0</li><li>AEL Color Protocol v1.0</li><li>ULTRA PREMIUM Xcolor — Visual Picker & Pigments</li><li>AEL Sovereign Ω-Platform Launch — Image, Text & DB</li></ul></div>
+    <div class="about-card"><h3>Tech Stack</h3><ul><li>Vanilla ES6+ Classes</li><li>Mulberry32 Deterministic PRNG</li><li>HSL/Hex/RGB/CMYK/LAB Color Math</li><li>WCAG 2.1 Contrast Engine (AA/AAA)</li><li>Generative Philosophy System</li><li>Canvas Color Picker</li><li>localStorage Favorites & Palettes</li><li>Image Dominant Color Extraction</li><li>Text Regex Color Parsing</li><li>Euclidean Brand Matching</li><li>15 Historical Pigments</li><li>2,000-Node Spectrum Scan</li><li>16 Export Formats</li><li>Glassmorphism UI</li></ul></div>
+    <div class="about-card"><h3>Version</h3><ul><li>v5.0 — Sovereign Ω-Platform Launch (current)</li><li>v4.0 — Unified Color Intelligence</li><li>v3.0 — Merged Random Spectrum System</li><li>v2.0 — Color Intelligence engine</li><li>v1.0 — Semantic vector analysis</li></ul></div>
+    <div class="about-card"><h3>Contact</h3><div class="contact-info"><p><strong>Creator:</strong> Ayman Elmasry</p><p><strong>Studio:</strong> AEL Digital Studio</p><p><strong>Email:</strong> <a href="mailto:info@aymanelmasry.com">info@aymanelmasry.com</a></p><p><strong>GitHub:</strong> <a href="https://github.com/aymanelmasryael/ael-color-os">github.com/aymanelmasryael/ael-color-os</a></p></div></div>
+  </div>
+</div>
+
+<div class="footer">&copy; 2026 Ayman Elmasry — AEL Digital Studio | Ω-Platform v5 &middot; Sovereign Omega &middot; AEL Sovereign Ultra-Directive™</div>
 <div id="toast"></div>
 </div>
 <script src="ael_color_os.js"></script>
-</body>
-</html>
+</body></html>
