@@ -1,7 +1,7 @@
-# AEL | Color OS — Semantic Color Palette Generator
+# AEL | Color OS — Random Spectrum System v3.0
 
-> **Semantic color palette generator** with 4 professional modes — Professional, Vibrant, Pastel, and Dark.  
-> Generate, preview, and export consistent design tokens for any platform.  
+> **Sovereign color intelligence system** with generative philosophy, deterministic harmonies, WCAG contrast analysis, and multi-format export.
+> Powered by the Random Spectrum System v3.0.
 > Built by Ayman Elmasry — AEL Digital Studio.
 
 ---
@@ -19,6 +19,7 @@
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
+- [Generation Modes](#generation-modes)
 - [Export Formats](#export-formats)
 - [Technical Details](#technical-details)
 - [Credits](#credits)
@@ -27,40 +28,54 @@
 
 ## Features
 
-- **4 modes** — Professional (balanced), Vibrant (bold), Pastel (soft), Dark (low-light)
-- **HSL controls** — interactive sliders for hue, saturation, and lightness
-- **Smart palette** — generates Primary, Secondary, Accent, Background, and Surface colors
-- **5 export formats** — CSS Variables, Tailwind Config, Android XML, iOS SwiftUI, JSON
-- **Real-time preview** — color swatches update instantly as you adjust
-- **One-click copy** — copy hex values directly from any swatch
-- **Semantic engine** — algorithmically generates color hierarchies from a single hue
-- **Glassmorphism UI** — dark theme with blue (#0074FF) accents
+- **6 Harmonic Modes** — Solo Philosophy → Harmonized Universe. Each mode uses a distinct color harmony rule (monochromatic, complementary, triadic, tetradic, analogous, compound)
+- **Deterministic PRNG** — Mulberry32 algorithm ensures reproducibility: same seed = same colors
+- **Generative Philosophy** — every color state carries an archetype, core meaning, psychological impact, cultural interpretation, and 2026 relevance, computed from its perceptual properties
+- **WCAG Contrast Analysis** — real-time luminance calculation, contrast ratio (AA/AAA), temperature classification, saturation class
+- **4 Export Formats** — JSON (AI-ready schema), CSS custom properties, Style Dictionary tokens, philosophy plain-text report — all with deterministic checksums
+- **Interactive Controls** — generation mode selector, intensity slider, HSL fine-tuning with live preview
+- **Real-time Generation** — continuous generation at 400ms intervals with stop/start control
+- **Glassmorphism UI** — dark theme with #0074FF blue accents, animated particle background, responsive layout
 
 ---
 
 ## How It Works
 
-### Semantic Color Engine
+### Sovereign Color Engine
 
-The engine takes a single HSL input and generates a complete 5-color semantic palette:
+The engine uses a deterministic Mulberry32 PRNG seeded from a combination of the current timestamp, mode index, and intensity value. Each generation pass produces a set of color states that follow a specific harmonic mode:
 
-1. **Base hue** — user selects a hue via the HSL sliders or mode preset
-2. **Saturation & lightness** — fine-tuned with interactive controls
-3. **Semantic derivation** — the engine algorithmically derives each role:
-   - **Primary** — the selected hue at full saturation
-   - **Secondary** — complementary hue (shifted ±30° on the color wheel)
-   - **Accent** — high-contrast variant for highlights and CTAs
-   - **Background** — desaturated, low-lightness variant
-   - **Surface** — mid-tone variant for cards and panels
-4. **Mode adaptation** — each mode applies different derivation rules:
-   - **Professional** — balanced saturation, conservative contrast
-   - **Vibrant** — high saturation, bold contrasts
-   - **Pastel** — low saturation, high lightness
-   - **Dark** — reduced lightness across all roles
+1. **Seed Generation** — `currentSeed = timestamp × mode × intensity`
+2. **Color Derivation** — base hue is randomized, then hues are distributed according to the active harmony rule
+3. **Perceptual Constraint** — saturation and lightness are clamped to perceptual ranges based on intensity
+4. **Philosophy Synthesis** — each color state receives a generative philosophy:
+   - Archetype (e.g., "Neural Signal", "Cosmic Harmony")
+   - Core meaning derived from hue angle
+   - Psychological impact from saturation
+   - Cultural interpretation from temperature
+   - Best usage from perceptual properties
+5. **Science Calculation** — luminance, WCAG contrast ratio, temperature, saturation class
+6. **Checksum Generation** — each export format gets a deterministic 8-char hex checksum
 
 ```
-HSL Input → Mode Rules → Derivation Engine → 5-Color Palette → Preview / Export
+Seed → Mulberry32 PRNG → Hue Distribution → HSL Generation → Hex Conversion
+↓
+Philosophy Engine + Science Engine + WCAG Engine
+↓
+Color States → Export (JSON / CSS / Tokens / Report)
 ```
+
+### Philosophy Engine
+
+The philosophy system maps color properties to semantic interpretations:
+
+| Property | Source | Range |
+|----------|--------|-------|
+| Archetype | Deterministic from hue + index | ~15 archetypes (mode-specific) |
+| Core meaning | Hue angle mapping | Energy/Trust/Growth/Wisdom/Creativity/Passion |
+| Psychological impact | Saturation level | Calm/Balanced/Dynamic/Intense |
+| Cultural interpretation | Temperature | Warmth/Coolness/Neutrality |
+| 2026 relevance | Luminance + saturation | 4 levels (Transformative → Niche) |
 
 ---
 
@@ -68,20 +83,20 @@ HSL Input → Mode Rules → Derivation Engine → 5-Color Palette → Preview /
 
 ```
 ael-color-os/
-├── index.html                # HTML5 semantic structure
-├── css/
-│   └── style.css             # All styles (glassmorphism, dark theme)
-├── js/
-│   └── script.js             # Full JS engine (HSL, palette generation, export)
+├── index.html                # HTML5 tabbed interface
+├── ael_color_os.css          # All styles (glassmorphism, dark theme, color cards)
+├── ael_color_os.js           # Full sovereign engine (PRNG, color math, philosophy, export)
 ├── screenshot.svg            # Project preview image
+├── ael-logo.svg              # AEL brand logo
+├── .nojekyll                 # GitHub Pages compatibility
 ├── .gitignore
 └── README.md
 ```
 
-This separation follows modern web best practices:
-- **HTML5** — semantic elements
-- **CSS3** — custom properties, Grid layout, glassmorphism
-- **Vanilla JS (ES2020+)** — HSL color engine, 5 export formatters
+This follows a flat single-page architecture:
+- **HTML5** — semantic tab structure (Overview, Generate, Export, About)
+- **CSS3** — custom properties, Grid layout, glassmorphism, responsive
+- **Vanilla JS (ES2020+)** — 3 main classes: SovereignRandom, AELColorEngine, UIController
 
 ---
 
@@ -106,32 +121,43 @@ Or simply open `index.html` in any modern browser — no server required.
 
 ## Usage
 
-1. Choose a mode (Professional, Vibrant, Pastel, Dark)
-2. Adjust HSL sliders to tune the primary color
-3. Preview the generated 5-color palette in real-time
-4. Click any swatch to copy its hex value
-5. Export tokens in your preferred format
+1. Open the **Generate** tab
+2. Select a **Generation Mode** from the sidebar (1-6)
+3. Adjust **Intensity** slider to control hue range, saturation, and lightness variance
+4. Click **Generate** to begin continuous generation, or **Stop** to freeze the current set
+5. **Fine-tune** with Hue/Saturation/Lightness sliders for live preview
+6. Switch to the **Export** tab and choose a format
+7. Each export includes a **Checksum** for reproducibility verification
 
-### Mode Comparison
+---
 
-| Mode | Saturation | Lightness | Best For |
-|------|-----------|-----------|----------|
-| **Professional** | Moderate | Balanced | Corporate, SaaS dashboards |
-| **Vibrant** | High | Moderate | Creative, marketing, brands |
-| **Pastel** | Low | High | Soft UI, wellness apps |
-| **Dark** | Moderate | Low | Dark mode interfaces |
+## Generation Modes
+
+| Mode | Name | Colors | Harmony Rule | Best For |
+|------|------|--------|-------------|----------|
+| 1 | **Solo Philosophy** | 1 | Monochromatic | Single-color systems, minimal branding |
+| 2 | **Dialogue & Tension** | 2 | Complementary | Duotone, contrast-driven designs |
+| 3 | **Balance** | 3 | Triadic | Balanced UI, dashboard palettes |
+| 4 | **System Logic** | 4 | Tetradic | Complex design systems, data viz |
+| 5 | **Identity Formation** | 5 | Analogous | Brand identity, gradient systems |
+| 6 | **Harmonized Universe** | 6-8 | Compound | Full design systems, comprehensive palettes |
 
 ---
 
 ## Export Formats
 
-| Format | Platform | Example Output |
-|--------|----------|---------------|
-| **CSS** | Web | `--ael-primary: #0074FF;` |
-| **Tailwind** | Tailwind CSS | `theme.extend.colors.ael = { primary: '#0074FF' }` |
-| **Android XML** | Android | `<color name="ael_primary">#FF0074FF</color>` |
-| **iOS SwiftUI** | Apple | `Color("aelPrimary")` |
-| **JSON** | Universal | `{ "primary": { "hex": "#0074FF", "rgb": [0, 116, 255] } }` |
+| Format | Extension | Description | Use Case |
+|--------|-----------|-------------|----------|
+| **JSON** | `.json` | Complete AI-ready schema with philosophy, science, and versioning | AI pipelines, data interchange |
+| **CSS** | `.css` | Custom properties with HSL fallbacks and metadata | Web projects, design systems |
+| **Tokens** | `.json` | Style Dictionary format with attributes | Design token pipelines |
+| **Report** | `.txt` | Plain-text philosophy analysis with full breakdown | Documentation, stakeholder reviews |
+
+All exports include:
+- Platform signature (`AEL_SOVEREIGN_v3.0_2025_2026`)
+- Deterministic seed for reproducibility
+- 8-character hex checksum
+- ISO 8601 timestamp
 
 ---
 
@@ -139,13 +165,16 @@ Or simply open `index.html` in any modern browser — no server required.
 
 | Aspect | Detail |
 |--------|--------|
-| Architecture | Static site (HTML5 + CSS3 + JS) |
-| JavaScript | Vanilla ES2020+, zero dependencies |
-| CSS | Custom properties for theming |
-| Color engine | HSL-based semantic derivation |
-| Export formats | 5 (CSS, Tailwind, Android XML, iOS SwiftUI, JSON) |
+| Architecture | Flat single-page app (HTML5 + CSS3 + JS) |
+| JavaScript | Vanilla ES2020+, 3 classes, zero dependencies |
+| PRNG | Mulberry32 (deterministic, 32-bit) |
+| Color math | HSL↔Hex↔RGB, WCAG luminance, perceptual mapping |
+| Philosophy engine | Archetype + meaning + psychology + culture + relevance |
+| Export formats | 4 (JSON, CSS, Style Dictionary, Report) |
+| Checksums | 8-char hex (simple hash of export content) |
+| Animations | Canvas particle system with mouse interaction |
 | Browser support | Chrome, Firefox, Safari, Edge (modern versions) |
-| Processing | Fully client-side — instant updates |
+| Processing | Fully client-side — no server required |
 
 ---
 
@@ -162,4 +191,4 @@ Or simply open `index.html` in any modern browser — no server required.
 
 ---
 
-*AEL Prompt IP System v1.0 — Sovereign Identity Block*
+*AEL Color Intelligence — Sovereign Random Spectrum v3.0*
