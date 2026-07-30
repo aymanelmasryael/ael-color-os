@@ -1,5 +1,7 @@
 # AEL Sovereign Ω-Platform Launch v5.0
 
+> **🚨 ARCHIVED** — This repository has been archived. Development continues in [ael-omega-platform](https://github.com/aymanelmasryael/ael-omega-platform).
+
 > **Sovereign color intelligence system** — 6 harmonic modes, 8 palette styles, 7 world references, canonical protocol, API playground, visual picker, 15 historical pigments, 2K spectrum scan, image analysis, text extraction, brand map matching, contrast analyzer, palette database, and 13-format export.
 > Powered by the **AEL Color Intelligence Engine v5.0**.
 > Built by Ayman Elmasry — AEL Digital Studio.
